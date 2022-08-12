@@ -163,7 +163,11 @@ EOF
     }
 }
 EOF
-    
+    wget -N https://raw.githubusercontent.com/taffychan/hysteria-2/main/hy-clash.yaml
+    sed -i "s/METANAME/${ClashMetaName}/" hy-clash.yaml
+    sed -i "s/METAIP/${IP}/" hy-clash.yaml
+    sed -i "s/METAPORT/${PORT}/" hy-clash.yaml
+    sed -i "s/METAOBFS/${OBFS}/" hy-clash.yaml
     cd /root/hy/acl
     wget -N https://raw.githubusercontent.com/taffychan/hysteria/main/GetRoutes.py
     python3 GetRoutes.py
